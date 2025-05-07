@@ -17,11 +17,11 @@ const AwesomeServices = () => {
             <h2 className="text-center text-3xl font-bold my-10">Our Awesome <span className='text-[#F63E7B]'>Services </span></h2>
             <div className='grid md:grid-cols-3 my-20'>
                 {
-                    data.map(service=><div key={service._id} className="card text-center card-compact bg-base-100 ">
+                    data.map(service=><div key={service._id} className="card text-center card-compact bg-base-100 hover:shadow-lg">
                         <figure>
                           <img
                             src={service.image}
-                            alt="Shoes" />
+                            alt="Shoes" className='w-16'/>
                         </figure>
                         <div className="card-body">
                           <h2 className="text-2xl font-bold">{service.title}</h2>
