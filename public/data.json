@@ -1,0 +1,72 @@
+[
+  {
+    "title": "Classic Facial",
+    "price": 120,
+    "description": "A refreshing facial treatment that cleanses, exfoliates, and nourishes your skin.",
+    "category": "SkinCare",
+    "image": "https://i.ibb.co.com/TB1KyMps/Group-1373.png"
+  },
+  {
+    "title": "Anti-Aging Facial",
+    "price": 220,
+    "description": "A rejuvenating facial treatment targeting wrinkles and fine lines.",
+    "category": "SkinCare",
+    "image": "https://i.ibb.co.com/TB1KyMps/Group-1373.png"
+  },
+  {
+    "title": "Full Body Waxing",
+    "price": 250,
+    "description": "Complete hair removal from arms, legs, underarms, and more using gentle wax.",
+    "category": "SkinCare",
+    "image": "https://i.ibb.co.com/TB1KyMps/Group-1373.png"
+  },
+  {
+    "title": "Bridal Makeup",
+    "price": 800,
+    "description": "Professional bridal makeup that includes trial, contouring, and lashes.",
+    "category": "Makeup",
+    "image": "https://i.ibb.co.com/20tcrkHW/Group-1374.png"
+  },
+  {
+    "title": "Party Makeup",
+    "price": 300,
+    "description": "Glamorous makeup for parties and events, tailored to your outfit and occasion.",
+    "category": "Makeup",
+    "image": "https://i.ibb.co.com/20tcrkHW/Group-1374.png"
+  },
+  {
+    "title": "Eyebrow Threading",
+    "price": 200,
+    "description": "Perfectly shaped eyebrows using traditional threading technique.",
+    "category": "Makeup",
+    "image": "https://i.ibb.co.com/20tcrkHW/Group-1374.png"
+  },
+  {
+    "title": "Hair Spa Treatment",
+    "price": 180,
+    "description": "Nourish and rejuvenate your hair with our deep conditioning hair spa.",
+    "category": "HairCare",
+    "image": "https://i.ibb.co.com/cXS4DLPf/Group-1372.png"
+  },
+  {
+    "title": "Hair Coloring",
+    "price": 350,
+    "description": "Full hair coloring service using premium dyes in shades of your choice.",
+    "category": "HairCare",
+    "image": "https://i.ibb.co.com/cXS4DLPf/Group-1372.png"
+  },
+  {
+    "title": "Manicure & Pedicure",
+    "price": 150,
+    "description": "A complete hand and foot care session with scrub, massage, and nail grooming.",
+    "category": "HairCare",
+    "image": "https://i.ibb.co.com/cXS4DLPf/Group-1372.png"
+  },
+  {
+    "title": "Nail Art Design",
+    "price": 800,
+    "description": "Trendy nail art with intricate designs and long-lasting polish.",
+    "category": "Extra",
+    "image": "https://i.ibb.co.com/20tcrkHW/Group-1374.png"
+  }
+]

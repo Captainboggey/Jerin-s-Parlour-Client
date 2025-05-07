@@ -3,8 +3,8 @@ import i1 from "../../../../assets/images/beautiful-young-asian-woman-touching-h
 
 const Banner = () => {
     return (
-        <div className="hero bg-[#FFF8F5] h-[677px]">
-            <div className="hero-content  flex-col gap-36 lg:flex-row-reverse">
+        <div className="hero bg-[#FFF8F5] h-[700px]">
+            <div className="hero-content  flex-col lg:gap-36 lg:flex-row-reverse">
                 <img
                     src={i1}
                     className="max-w-sm rounded-lg shadow-2xl" />
@@ -15,7 +15,7 @@ const Banner = () => {
                   
                     </h1>
                     <h1 className='text-5xl font-bold mt-2'>FOR EVERY WOMEN</h1>
-                    <p className="py-6">
+                    <p className="lg:py-6">
                     Lorem ipsum dolor sit amet, consectetur <br />
                      adipiscing elit. Purus commodo ipsum duis <br />
                       laoreet maecenas. Feugiat 
