@@ -37,21 +37,21 @@ const Testimonials = () => {
                      className="mySwiper"
                    >
                     {
-                        review.map(aData => <SwiperSlide key={aData._id}><div className="card bg-base-100 w-96  mx-auto">
+                        review.map(aData => <SwiperSlide key={aData._id}><div className=" lg:my-0 card bg-base-100 w-96  mx-auto">
                             <div className="card-body">
                                 <div className='flex gap-2'>
                                     <img src={aData.image} className='w-12' alt="" />
                                 <h2 className="text-2xl font-bold">{aData.name} <br /> <span className='text-sm'>{aData.designation}</span> </h2>
                                 </div>
                                 
-                                <p>{aData.review}</p>
-                               <p>
-                               <Rating className=''
+                                <div>{aData.review}</div>
+                               <div>
+                               <Rating className='mb-10'
                                     style={{ maxWidth:'180px' }}
                                     value={aData.rating}
                                     readOnly
                                 />
-                               </p>
+                               </div>
                             </div>
                         </div></SwiperSlide>)
                     }
