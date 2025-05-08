@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaBagShopping, FaCartPlus, FaFirstOrder, FaJediOrder, FaLockOpen, FaPlus, FaUserPlus } from 'react-icons/fa6';
+import { FaBagShopping, FaBox, FaCartPlus, FaFirstOrder, FaJediOrder, FaLockOpen, FaPlus, FaUserPlus } from 'react-icons/fa6';
 import { Link, Outlet } from 'react-router-dom';
 import useAuth from '../Hooks/useAuth';
 import useAdmin from '../Hooks/useAdmin';
@@ -17,7 +17,7 @@ const Dashboard = () => {
         <Link to={`/dashboard/orderList`}> <li ><h2><FaLockOpen></FaLockOpen>Order List </h2></li></Link>
         <Link to={`/dashboard/addService`}> <li ><h2><FaPlus></FaPlus> Add Service</h2></li></Link>
         <Link to={`/dashboard/makeAdmin`}> <li ><h2><FaUserPlus></FaUserPlus> Make Admin</h2></li></Link>
-        <Link to={`/dashboard/bookingList`}> <li ><h2><FaBagShopping></FaBagShopping> Manage Services</h2></li></Link>
+        <Link to={`/dashboard/manageService`}> <li ><h2><FaBox></FaBox> Manage Services</h2></li></Link>
     </>:
     <>
     <Link to={'/'}> <li ><h2>Home</h2></li></Link>

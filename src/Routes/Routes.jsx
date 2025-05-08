@@ -12,6 +12,7 @@ import OrderList from "../Pages/Dashboard/OrderList/OrderList";
 import AddService from "../Pages/Dashboard/AddService/AddService";
 import MakeAdmin from "../Pages/Dashboard/MakeAdmin/MakeAdmin";
 import AdminRoute from "./AdminRoute";
+import ManageServices from "../Pages/Dashboard/ManageServices/ManageServices";
 
 const router= createBrowserRouter([{
     path: '/',
@@ -53,6 +54,9 @@ const router= createBrowserRouter([{
     },{
         path:'/dashboard/makeAdmin',
         element:<AdminRoute><MakeAdmin></MakeAdmin></AdminRoute>
+    },{
+        path:'/dashboard/manageService',
+        element:<ManageServices></ManageServices>
     }]
 }])
 
