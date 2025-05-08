@@ -7,6 +7,7 @@ import Appointment from "../Pages/Appointment/Appointment";
 import PrivateRoute from "./PrivateRoute";
 import Dashboard from "../Layout/Dashboard";
 import Payment from "../Pages/Dashboard/Payment/Payment";
+import BookingList from "../Pages/Dashboard/BookingList/BookingList";
 
 const router= createBrowserRouter([{
     path: '/',
@@ -31,6 +32,9 @@ const router= createBrowserRouter([{
         path: '/dashboard/payment/:id' || '/dashboard/payment/null',
         element:<Payment></Payment>,
         loader:({params})=>fetch(`http://localhost:5000/services/${params.id}`)
+    },{
+        path: '/dashboard/bookingList',
+        element:<BookingList></BookingList>
     }]
 }])
 

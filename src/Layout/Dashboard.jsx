@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaCartPlus } from 'react-icons/fa6';
+import { FaBagShopping, FaCartPlus } from 'react-icons/fa6';
 import { Link, Outlet } from 'react-router-dom';
 import useAuth from '../Hooks/useAuth';
 
@@ -10,6 +10,7 @@ const Dashboard = () => {
     const navLinks = <>
         <Link to={'/'}> <li ><h2>Home</h2></li></Link>
         <Link to={`/dashboard/payment/null`}> <li ><h2><FaCartPlus></FaCartPlus> Book</h2></li></Link>
+        <Link to={`/dashboard/bookingList`}> <li ><h2><FaBagShopping></FaBagShopping> Booking List</h2></li></Link>
     </>
 
     return (

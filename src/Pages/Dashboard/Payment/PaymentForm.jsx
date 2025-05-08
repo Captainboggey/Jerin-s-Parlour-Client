@@ -5,31 +5,31 @@ import useAuth from '../../../Hooks/useAuth';
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import useAxiosPublic from '../../../Hooks/useAxiosPublic';
 import Swal from 'sweetalert2';
-const PaymentForm = ({item}) => {
-    const {user}=useAuth()
+const PaymentForm = ({ item }) => {
+    const { user } = useAuth()
     const stripe = useStripe();
     const elements = useElements();
-    const [error,setError]=useState('')
-    const[transaction,setTransaction]=useState('')
-    const {title,price}=item
+    const [error, setError] = useState('')
+    const [transaction, setTransaction] = useState('')
+    const { title, price, _id, category, image,description } = item
     const axiosPublic = useAxiosPublic()
-    const [clientSecret,setClientSecret]=useState('')
-    const itemPrice ={price: price}
-   
-    useEffect(()=>{
-       
-      
-        axiosPublic.post('create-payment-intent',itemPrice)
-        .then(res=>{
-           
-            setClientSecret(res.data.clientSecret)
-            
-        })
-         
-           
-      
-    },[axiosPublic,price])
-    
+    const [clientSecret, setClientSecret] = useState('')
+    const itemPrice = { price: price }
+
+    useEffect(() => {
+
+
+        axiosPublic.post('create-payment-intent', itemPrice)
+            .then(res => {
+
+                setClientSecret(res.data.clientSecret)
+
+            })
+
+
+
+    }, [axiosPublic, price])
+
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -50,40 +50,57 @@ const PaymentForm = ({item}) => {
             card
         })
         if (error) {
-            setError('Error: ',error)
+            setError('Error: ', error)
             console.log('error', error)
         } else {
             console.log('[PaymentMethod]', paymentMethod)
         }
-        const{paymentIntent,error: confirmError}=await stripe.confirmCardPayment(clientSecret,{
-            payment_method:{
+        const { paymentIntent, error: confirmError } = await stripe.confirmCardPayment(clientSecret, {
+            payment_method: {
                 card: card,
-                billing_details:{
+                billing_details: {
                     name: user.displayName,
                     email: user.email
                 }
             }
         })
-        if(confirmError){
-            setError('Error: ',confirmError)
+        if (confirmError) {
+            setError('Error: ', confirmError)
         }
-        if(paymentIntent.status==='succeeded'){
-            setTransaction(paymentIntent.id)
-            const Toast = Swal.mixin({
-                toast: true,
-                position: "top-end",
-                showConfirmButton: false,
-                timer: 3000,
-                timerProgressBar: true,
-                didOpen: (toast) => {
-                  toast.onmouseenter = Swal.stopTimer;
-                  toast.onmouseleave = Swal.resumeTimer;
-                }
-              });
-              Toast.fire({
-                icon: "success",
-                title: "Order Placed successfully"
-              });
+        if (paymentIntent.status === 'succeeded') {
+            setTransaction("Transaction: ",paymentIntent.id)
+            const orderDetails = {
+                itemName: title,
+                itemId: _id,
+                price: price,
+                itemImage: image,
+                email: user.email,
+                name: user.displayName,
+                transaction: paymentIntent.id,
+                description: description
+
+            }
+            axiosPublic.post('/order', orderDetails)
+                .then(res => {
+                    if (res.data.insertedId) {
+                        const Toast = Swal.mixin({
+                            toast: true,
+                            position: "top-end",
+                            showConfirmButton: false,
+                            timer: 3000,
+                            timerProgressBar: true,
+                            didOpen: (toast) => {
+                                toast.onmouseenter = Swal.stopTimer;
+                                toast.onmouseleave = Swal.resumeTimer;
+                            }
+                        });
+                        Toast.fire({
+                            icon: "success",
+                            title: "Order Placed successfully"
+                        });
+                    }
+                })
+
         }
     }
     return (
