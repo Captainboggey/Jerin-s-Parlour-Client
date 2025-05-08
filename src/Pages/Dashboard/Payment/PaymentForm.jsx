@@ -3,8 +3,9 @@ import React, { useEffect, useState } from 'react';
 // import { CardElement, useElements, useStripe } from '../../src';
 import useAuth from '../../../Hooks/useAuth';
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
-import useAxiosPublic from '../../../Hooks/useAxiosPublic';
+
 import Swal from 'sweetalert2';
+import useAxiosSecure from '../../../Hooks/useAxiosSecure';
 const PaymentForm = ({ item }) => {
     const { user } = useAuth()
     const stripe = useStripe();
@@ -12,23 +13,28 @@ const PaymentForm = ({ item }) => {
     const [error, setError] = useState('')
     const [transaction, setTransaction] = useState('')
     const { title, price, _id, category, image,description } = item
-    const axiosPublic = useAxiosPublic()
+    
+    const axiosSecure =useAxiosSecure()
     const [clientSecret, setClientSecret] = useState('')
     const itemPrice = { price: price }
 
     useEffect(() => {
+{
+    stripe &&   axiosSecure.post('create-payment-intent', itemPrice)
+    .then(res => {
+
+        setClientSecret(res.data.clientSecret)
+
+    })
+}
+ 
 
 
-        axiosPublic.post('create-payment-intent', itemPrice)
-            .then(res => {
 
-                setClientSecret(res.data.clientSecret)
-
-            })
+        
 
 
-
-    }, [axiosPublic, price])
+    }, [axiosSecure, price])
 
 
     const handleSubmit = async (e) => {

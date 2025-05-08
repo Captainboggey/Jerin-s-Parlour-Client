@@ -8,6 +8,7 @@ import PrivateRoute from "./PrivateRoute";
 import Dashboard from "../Layout/Dashboard";
 import Payment from "../Pages/Dashboard/Payment/Payment";
 import BookingList from "../Pages/Dashboard/BookingList/BookingList";
+import OrderList from "../Pages/Dashboard/OrderList/OrderList";
 
 const router= createBrowserRouter([{
     path: '/',
@@ -35,6 +36,14 @@ const router= createBrowserRouter([{
     },{
         path: '/dashboard/bookingList',
         element:<BookingList></BookingList>
+    },
+    // admin
+    
+    {
+        path:'/dashboard/orderList',
+        element:<OrderList></OrderList>
+
+
     }]
 }])
 

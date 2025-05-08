@@ -6,12 +6,25 @@ import useAuth from '../Hooks/useAuth';
 
 const Dashboard = () => {
     const {user}=useAuth()
+    const isAdmin = false
 
-    const navLinks = <>
+    const navLinks = 
+    isAdmin?
+    
+    <>
         <Link to={'/'}> <li ><h2>Home</h2></li></Link>
+        <Link to={`/dashboard/orderList`}> <li ><h2><FaCartPlus></FaCartPlus>Order List </h2></li></Link>
+        <Link to={`/dashboard/bookingList`}> <li ><h2><FaBagShopping></FaBagShopping> Add Service</h2></li></Link>
+        <Link to={`/dashboard/bookingList`}> <li ><h2><FaBagShopping></FaBagShopping> Make Admin</h2></li></Link>
+        <Link to={`/dashboard/bookingList`}> <li ><h2><FaBagShopping></FaBagShopping> Manage Services</h2></li></Link>
+    </>:
+    <>
+    <Link to={'/'}> <li ><h2>Home</h2></li></Link>
         <Link to={`/dashboard/payment/null`}> <li ><h2><FaCartPlus></FaCartPlus> Book</h2></li></Link>
         <Link to={`/dashboard/bookingList`}> <li ><h2><FaBagShopping></FaBagShopping> Booking List</h2></li></Link>
     </>
+    
+    
 
     return (
         <div className='lg:flex'>
