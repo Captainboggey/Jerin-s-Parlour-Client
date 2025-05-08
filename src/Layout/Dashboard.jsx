@@ -1,13 +1,14 @@
 import React from 'react';
-import { FaBagShopping, FaCartPlus, FaFirstOrder, FaJediOrder, FaLockOpen, FaPlus } from 'react-icons/fa6';
+import { FaBagShopping, FaCartPlus, FaFirstOrder, FaJediOrder, FaLockOpen, FaPlus, FaUserPlus } from 'react-icons/fa6';
 import { Link, Outlet } from 'react-router-dom';
 import useAuth from '../Hooks/useAuth';
+import useAdmin from '../Hooks/useAdmin';
 
 
 const Dashboard = () => {
     const {user}=useAuth()
-    const isAdmin = true
-
+    const [isAdmin] = useAdmin()
+    // console.log(isAdmin)
     const navLinks = 
     isAdmin?
     
@@ -15,7 +16,7 @@ const Dashboard = () => {
         <Link to={'/'}> <li ><h2>Home</h2></li></Link>
         <Link to={`/dashboard/orderList`}> <li ><h2><FaLockOpen></FaLockOpen>Order List </h2></li></Link>
         <Link to={`/dashboard/addService`}> <li ><h2><FaPlus></FaPlus> Add Service</h2></li></Link>
-        <Link to={`/dashboard/`}> <li ><h2><FaBagShopping></FaBagShopping> Make Admin</h2></li></Link>
+        <Link to={`/dashboard/makeAdmin`}> <li ><h2><FaUserPlus></FaUserPlus> Make Admin</h2></li></Link>
         <Link to={`/dashboard/bookingList`}> <li ><h2><FaBagShopping></FaBagShopping> Manage Services</h2></li></Link>
     </>:
     <>

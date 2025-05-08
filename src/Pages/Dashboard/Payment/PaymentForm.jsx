@@ -20,7 +20,7 @@ const PaymentForm = ({ item }) => {
 
     useEffect(() => {
 {
-    stripe &&   axiosSecure.post('create-payment-intent', itemPrice)
+    itemPrice &&   axiosSecure.post('create-payment-intent', itemPrice)
     .then(res => {
 
         setClientSecret(res.data.clientSecret)
@@ -86,7 +86,7 @@ const PaymentForm = ({ item }) => {
                 description: description
 
             }
-            axiosPublic.post('/order', orderDetails)
+            axiosSecure.post('/order', orderDetails)
                 .then(res => {
                     if (res.data.insertedId) {
                         const Toast = Swal.mixin({

@@ -12,9 +12,15 @@ const Navbar = () => {
         <Link to={'/appointment'}><li><button className='hover:bg-[#F63E7B]'>Appointment</button></li></Link>
         <Link to={'/'}><li><button className='hover:bg-[#F63E7B]'>Our Team</button></li></Link>
         <Link to={'/'}><li><button className='hover:bg-[#F63E7B]'>Contact Us</button></li></Link>
+
+        {
+            user&&<Link to={'/dashboard'}><li><button className='hover:bg-[#F63E7B]'>Dashboard</button></li></Link>
+        }
+
         {
             user?<li><button onClick={()=>logOut()} className='bg-black text-white px-8  '>Logout</button></li>:<Link to={'/login'}><li><button className='hover:bg-[#F63E7B] text-black px-8  '>Login</button></li></Link>
         }
+        
     </>
     return (
         <div className="navbar fixed bg-transparent z-10 ">

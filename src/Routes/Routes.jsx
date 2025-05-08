@@ -10,6 +10,8 @@ import Payment from "../Pages/Dashboard/Payment/Payment";
 import BookingList from "../Pages/Dashboard/BookingList/BookingList";
 import OrderList from "../Pages/Dashboard/OrderList/OrderList";
 import AddService from "../Pages/Dashboard/AddService/AddService";
+import MakeAdmin from "../Pages/Dashboard/MakeAdmin/MakeAdmin";
+import AdminRoute from "./AdminRoute";
 
 const router= createBrowserRouter([{
     path: '/',
@@ -42,12 +44,15 @@ const router= createBrowserRouter([{
     
     {
         path:'/dashboard/orderList',
-        element:<OrderList></OrderList>
+        element:<AdminRoute><OrderList></OrderList></AdminRoute>
 
 
     },{
         path:'/dashboard/addService',
-        element:<AddService></AddService>
+        element:<AdminRoute><AddService></AddService></AdminRoute>
+    },{
+        path:'/dashboard/makeAdmin',
+        element:<AdminRoute><MakeAdmin></MakeAdmin></AdminRoute>
     }]
 }])
 
