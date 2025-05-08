@@ -1,21 +1,21 @@
 import React from 'react';
-import { FaBagShopping, FaCartPlus } from 'react-icons/fa6';
+import { FaBagShopping, FaCartPlus, FaFirstOrder, FaJediOrder, FaLockOpen, FaPlus } from 'react-icons/fa6';
 import { Link, Outlet } from 'react-router-dom';
 import useAuth from '../Hooks/useAuth';
 
 
 const Dashboard = () => {
     const {user}=useAuth()
-    const isAdmin = false
+    const isAdmin = true
 
     const navLinks = 
     isAdmin?
     
     <>
         <Link to={'/'}> <li ><h2>Home</h2></li></Link>
-        <Link to={`/dashboard/orderList`}> <li ><h2><FaCartPlus></FaCartPlus>Order List </h2></li></Link>
-        <Link to={`/dashboard/bookingList`}> <li ><h2><FaBagShopping></FaBagShopping> Add Service</h2></li></Link>
-        <Link to={`/dashboard/bookingList`}> <li ><h2><FaBagShopping></FaBagShopping> Make Admin</h2></li></Link>
+        <Link to={`/dashboard/orderList`}> <li ><h2><FaLockOpen></FaLockOpen>Order List </h2></li></Link>
+        <Link to={`/dashboard/addService`}> <li ><h2><FaPlus></FaPlus> Add Service</h2></li></Link>
+        <Link to={`/dashboard/`}> <li ><h2><FaBagShopping></FaBagShopping> Make Admin</h2></li></Link>
         <Link to={`/dashboard/bookingList`}> <li ><h2><FaBagShopping></FaBagShopping> Manage Services</h2></li></Link>
     </>:
     <>

@@ -9,6 +9,7 @@ import Dashboard from "../Layout/Dashboard";
 import Payment from "../Pages/Dashboard/Payment/Payment";
 import BookingList from "../Pages/Dashboard/BookingList/BookingList";
 import OrderList from "../Pages/Dashboard/OrderList/OrderList";
+import AddService from "../Pages/Dashboard/AddService/AddService";
 
 const router= createBrowserRouter([{
     path: '/',
@@ -44,6 +45,9 @@ const router= createBrowserRouter([{
         element:<OrderList></OrderList>
 
 
+    },{
+        path:'/dashboard/addService',
+        element:<AddService></AddService>
     }]
 }])
 
