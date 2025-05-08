@@ -9,7 +9,7 @@ const Navbar = () => {
    
     const navOptions=<>
         <Link to={'/'}><li><button className='hover:bg-[#F63E7B]'>Home</button></li></Link>
-        <Link to={'/'}><li><button className='hover:bg-[#F63E7B]'>Our Portfolio</button></li></Link>
+        <Link to={'/appointment'}><li><button className='hover:bg-[#F63E7B]'>Appointment</button></li></Link>
         <Link to={'/'}><li><button className='hover:bg-[#F63E7B]'>Our Team</button></li></Link>
         <Link to={'/'}><li><button className='hover:bg-[#F63E7B]'>Contact Us</button></li></Link>
         {

@@ -1,5 +1,6 @@
 import React from 'react';
 import i1 from "../../../../assets/images/beautiful-young-asian-woman-touching-her-clean-face-with-fresh-healthy-skin-isolated-white-wall-beauty-cosmetics-facial-treatment-concept 1.png"
+import { Link } from 'react-router-dom';
 
 const Banner = () => {
     return (
@@ -20,7 +21,7 @@ const Banner = () => {
                      adipiscing elit. Purus commodo ipsum duis <br />
                       laoreet maecenas. Feugiat 
                     </p>
-                    <button className="btn text-white rounded-md bg-[#F63E7B]">Get an Appointment</button>
+                   <Link to={'/appointment'}><button className="btn text-white rounded-md bg-[#F63E7B]">Get an Appointment</button></Link>
                 </div>
             </div>
         </div>

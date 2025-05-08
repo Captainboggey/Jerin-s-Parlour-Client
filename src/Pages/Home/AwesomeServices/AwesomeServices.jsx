@@ -1,6 +1,7 @@
 import React from 'react';
 import useAxiosPublic from '../../../Hooks/useAxiosPublic';
 import { useQuery } from '@tanstack/react-query';
+import { Link } from 'react-router-dom';
 
 const AwesomeServices = () => {
     const axiosPublic = useAxiosPublic()
@@ -25,7 +26,7 @@ const AwesomeServices = () => {
                         </figure>
                         <div className="card-body">
                           <h2 className="text-2xl font-bold">{service.title}</h2>
-                          <p className='text-xl text-[#F63E7B] font-bold'>{service.price}</p>
+                          <p className='text-xl text-[#F63E7B] font-bold'>${service.price}</p>
                           <p>{service.description}</p>
                           <div className="card-actions justify-end">
                             
@@ -37,7 +38,7 @@ const AwesomeServices = () => {
                 
             </div>
             <div className='text-center my-10'>
-                    <button className='btn bg-[#F63E7B] text-white'>Explore More</button>
+                    <Link to={'/appointment'}><button className='btn bg-[#F63E7B] text-white'>Explore More</button></Link>
                 </div>
         </div>
     );
